@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buku</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css'%}">
+</head>
+<body>
+    <img  src="{% static 'buku/crud.jpg'%}" alt="">
+    <h2>Halaman crud-buku</h2>
+    
+    <div id="menu">
+       <ul>
+           <li><a href="/" class="">Home</a></li>
+           <li><a href="/about/" class="">about</a></li>
+           <li><a href="/buku/" class="">buku</a></li>
+           <li><a href="/tamu/" class="">tamu</a></li>
+       </ul>
+    </div>
+
+    <div class="container">
+        {% for TampunganPost in TampunganPostingan %}
+        <h3>{{TampunganPost.judul}}</h3>
+        <p>{{TampunganPost.sinopsis}}</p>
+        <div class="alert alert-success" role="alert">
+            Kategori : {{TampunganPost.kategori}}
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-dark">Copyright 2022</span>
+        </div>
+    </footer>
+
+    <script scr="{%static 'vendor/boostrap/boostrap.js'%}" type="text/javascripts"></script>
+    <script scr="{%static 'vendor/boostrap/jquery-3.3.1.slim.min.js'%}" type="text/javascripts"></script>
+    <script scr="{%static 'vendor/boostrap/popper.min.js'%}" type="text/javascripts"></script>
+        
+</body>
+</html>
